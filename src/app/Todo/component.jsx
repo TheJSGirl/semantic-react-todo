@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grid, Icon, Segment, Radio } from 'semantic-ui-react';
 
-export default function Todo() {
+export default function Todo(props) {
+  const todoDetails = props.todo;
   return (
     <Grid.Row>
       <Grid.Column width={8}>
@@ -22,7 +23,7 @@ export default function Todo() {
                 />
               </Grid.Column>
               <Grid.Column width={9}>
-                <h2>Demo Task</h2>
+                <h2>{todoDetails && todoDetails.text}</h2>
               </Grid.Column>
               <Grid.Column
                 width={4}

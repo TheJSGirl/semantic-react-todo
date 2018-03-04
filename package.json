@@ -6,12 +6,14 @@
   "license": "MIT",
   "scripts": {
     "quick": "npm run clean && npm install && npm start",
-    "clean": "rm -rf .git && rm -rf _assets && git init && git add . && git commit -m \"initial commit\"",
+    "clean":
+      "rm -rf .git && rm -rf _assets && git init && git add . && git commit -m \"initial commit\"",
     "clear": "rm -rf build",
     "cont": "node ./scripts/create_container",
     "comp": "node ./scripts/create_component",
-    "build": "npm run clean && node ./scripts/copy_assets && webpack --config=config/webpack.prod.js",
-    "start": "webpack-dev-server --config=config/webpack.dev.js",
+    "build":
+      "npm run clean && node ./scripts/copy_assets && webpack --config=config/webpack.prod.js",
+    "start": "webpack-dev-server --config=config/webpack.dev.js --watch-poll",
     "test": "jest --watch",
     "test:cover": "jest --coverage"
   },
@@ -65,12 +67,8 @@
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
     },
-    "setupFiles": [
-      "./scripts/Test/jestSetup.js"
-    ],
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
+    "setupFiles": ["./scripts/Test/jestSetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
     "moduleNameMapper": {
       "^.+\\.(css|scss)$": "identity-obj-proxy"
     }

@@ -2,8 +2,8 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
-import TodoForm from './TodoForm/component';
-import ActiveTodoList from './ActiveTodoList/component';
+import TodoForm from './TodoForm/container';
+import ActiveTodoList from './ActiveTodoList/container';
 import CompletedTodo from './CompletedTodoList/component';
 
 export default function App() {

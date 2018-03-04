@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from 'semantic-ui-react';
 import Todo from '../Todo/component';
 
-export default function ActiveTodoList() {
+export default function ActiveTodoList({ todos }) {
   return (
     <Grid
       centered
@@ -20,7 +20,7 @@ export default function ActiveTodoList() {
           <hr />
         </Grid.Column>
       </Grid.Row>
-      {[1, 2, 3].map(el => <Todo key={el} />)}
+      {todos.map(singleTodo => <Todo key={singleTodo.time} todo={singleTodo} />)}
     </Grid>
   );
 }

@@ -2,7 +2,7 @@
   "name": "react-starter-v2",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ashok Dey <ashokdey100@gmail.com>",
+  "author": "Priyanka Negi",
   "license": "MIT",
   "scripts": {
     "quick": "npm run clean && npm install && npm start",
@@ -20,6 +20,7 @@
     "fs-extra": "^5.0.0",
     "html-webpack-plugin": "^3.0.4",
     "identity-obj-proxy": "^3.0.0",
+    "moment": "^2.21.0",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-datepicker": "^1.2.2",

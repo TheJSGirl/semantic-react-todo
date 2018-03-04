@@ -3,7 +3,8 @@ import { Grid } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import TodoForm from './TodoForm/component';
-import TodoList from './TodoList/component';
+import ActiveTodoList from './ActiveTodoList/component';
+import CompletedTodo from './CompletedTodoList/component';
 
 export default function App() {
   return (
@@ -23,7 +24,8 @@ export default function App() {
       </h1>
       <br />
       <TodoForm />
-      <TodoList />
+      <ActiveTodoList />
+      <CompletedTodo />
     </Grid>
   );
 }

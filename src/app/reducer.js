@@ -16,6 +16,7 @@ export default (state = initialState, action) => {
         ...state,
         todos: state.todos.filter(e => e.id !== action.todoId),
       };
+    /* eslint-disable no-case-declarations */
     case constants.TOGGLE_COMPLETE:
       const todo = state.todos.filter(e => e.id === action.todoId);
       if (!todo.length) {
@@ -26,7 +27,7 @@ export default (state = initialState, action) => {
         ...state,
         todos: [...state.todos, ...todo],
       };
-
+    /* eslint-enable no-case-declarations */
     default:
       return state;
   }

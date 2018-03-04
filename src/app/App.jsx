@@ -4,7 +4,7 @@ import 'semantic-ui-css/semantic.min.css';
 import 'react-datepicker/dist/react-datepicker.css';
 import TodoForm from './TodoForm/container';
 import ActiveTodoList from './ActiveTodoList/container';
-import CompletedTodo from './CompletedTodoList/component';
+import CompletedTodo from './CompletedTodoList/container';
 
 export default function App() {
   return (

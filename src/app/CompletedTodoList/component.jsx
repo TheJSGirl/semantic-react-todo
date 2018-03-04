@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react';
-import Todo from '../Todo/component';
+import Todo from '../Todo/container';
 
 export default function CompletedTodoList({ todos }) {
   return (

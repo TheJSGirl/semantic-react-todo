@@ -40,7 +40,11 @@ export default function Todo(props) {
                 }}
                 textAlign="right"
               >
-                <Radio toggle />
+                <Radio
+                  defaultChecked={todoDetails.completed}
+                  toggle
+                  onChange={() => props.onToggle(todoDetails.time)}
+                />
               </Grid.Column>
             </Grid.Row>
           </Grid>

@@ -15,6 +15,7 @@ class CompletedTodoContainer extends Component {
     }
     return todoList.filter(e => e.completed === true);
   }
+
   render() {
     const todos = this.filterCompleted();
 

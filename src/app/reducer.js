@@ -14,18 +14,19 @@ export default (state = initialState, action) => {
     case constants.DELETE_TODO:
       return {
         ...state,
-        todos: state.todos.filter(e => e.id !== action.todoId),
+        todos: state.todos.filter(e => e.time !== action.todoTime),
       };
     /* eslint-disable no-case-declarations */
     case constants.TOGGLE_COMPLETE:
-      const todo = state.todos.filter(e => e.id === action.todoId);
+      const todo = state.todos.filter(e => e.time === action.todoTime);
+      const newTodos = state.todos.filter(e => e.time !== action.todoTime);
       if (!todo.length) {
         return state;
       }
       todo[0].completed = !todo[0].completed;
       return {
         ...state,
-        todos: [...state.todos, ...todo],
+        todos: [...newTodos, ...todo],
       };
     /* eslint-enable no-case-declarations */
     default:

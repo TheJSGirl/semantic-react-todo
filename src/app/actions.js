@@ -7,16 +7,16 @@ export function addNewTodo(todo) {
   };
 }
 
-export function deleteTodo(todoId) {
+export function deleteTodo(todoTime) {
   return {
     type: constants.DELETE_TODO,
-    todoId,
+    todoTime,
   };
 }
 
-export function toggleComplete(todoId) {
+export function toggleComplete(todoTime) {
   return {
     type: constants.TOGGLE_COMPLETE,
-    todoId,
+    todoTime,
   };
 }

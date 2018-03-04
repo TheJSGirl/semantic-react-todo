@@ -7,14 +7,19 @@ class TodoContainer extends Component {
   constructor(props) {
     super(props);
     this.onChangeRadio = this.onChangeRadio.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
 
   onChangeRadio(todoTime) {
     this.props.toggleComplete(todoTime);
   }
 
+  onDelete(todoTime) {
+    this.props.deleteTodo(todoTime);
+  }
+
   render() {
-    return <Todo {...this.props} onToggle={this.onChangeRadio} />;
+    return <Todo {...this.props} onToggle={this.onChangeRadio} onDelete={this.onDelete} />;
   }
 }
 

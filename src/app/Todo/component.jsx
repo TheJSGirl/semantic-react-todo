@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon, Segment, Radio } from 'semantic-ui-react';
+import { Grid, Icon, Segment, Radio, Button } from 'semantic-ui-react';
 
 export default function Todo(props) {
   const todoDetails = props.todo;
@@ -20,6 +20,7 @@ export default function Todo(props) {
                   style={{
                     color: 'red',
                   }}
+                  onClick={() => props.onDelete(todoDetails.time)}
                 />
               </Grid.Column>
               <Grid.Column width={9}>

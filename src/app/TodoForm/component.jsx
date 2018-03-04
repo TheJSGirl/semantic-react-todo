@@ -1,8 +1,8 @@
 import React from 'react';
 import { Segment, Grid, Input, Button } from 'semantic-ui-react';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 
-export default function TodoForm() {
+export default function TodoForm({ handleAddTodo }) {
   return (
     <Grid.Row>
       <Grid.Column width={12}>
@@ -23,7 +23,7 @@ export default function TodoForm() {
               </Grid.Column>
               <Grid.Column width={1} />
               <Grid.Column width={3}>
-                <Button primary size="huge" style={{ width: '100%' }}>
+                <Button onClick={handleAddTodo} primary size="huge" style={{ width: '100%' }}>
                   Add Todo
                 </Button>
               </Grid.Column>

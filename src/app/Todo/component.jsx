@@ -1,13 +1,44 @@
 import React from 'react';
-import { Grid, Icon, Segment, Radio, Button } from 'semantic-ui-react';
+import { Grid, Icon, Segment, Radio, Button, Modal } from 'semantic-ui-react';
 
 export default function Todo(props) {
+  console.log(props);
   const todoDetails = props.todo;
   return (
     <Grid.Row>
       <Grid.Column width={8}>
         <Segment stacked>
+          props.showModal &&{' '}
           <Grid>
+            <Grid.Row centered>
+              <Grid.Column>
+                <Modal
+                  style={{ marginTop: '50vh', margin: '0 auto' }}
+                  size="tiny"
+                  open={props.showModal}
+                >
+                  <Modal.Header>Delete Todo!</Modal.Header>
+                  <Modal.Content>
+                    <p>
+                      Are you sure you want to delete todo:{' '}
+                      <b style={{ 'font-size': '1em' }}>{todoDetails && todoDetails.text}</b> ?
+                    </p>
+                  </Modal.Content>
+                  <Modal.Actions>
+                    <Button negative onClick={props.onDeleteCancel}>
+                      No
+                    </Button>
+                    <Button
+                      positive
+                      icon="checkmark"
+                      labelPosition="right"
+                      content="Yes"
+                      onClick={() => props.onConfirmDelete(todoDetails.time)}
+                    />
+                  </Modal.Actions>
+                </Modal>
+              </Grid.Column>
+            </Grid.Row>
             <Grid.Row>
               <Grid.Column
                 width={1}
@@ -20,7 +51,7 @@ export default function Todo(props) {
                   style={{
                     color: 'red',
                   }}
-                  onClick={() => props.onDelete(todoDetails.time)}
+                  onClick={props.onDelete}
                 />
               </Grid.Column>
               <Grid.Column width={9}>
